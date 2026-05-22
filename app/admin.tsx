@@ -7,33 +7,51 @@ export default function AdminDashboard() {
       <Text style={styles.logo}>CabGo Admin</Text>
       <Text style={styles.title}>Fleet Control Dashboard</Text>
 
-      <View style={styles.card}>
-        <Text style={styles.label}>Active Trips</Text>
-        <Text style={styles.value}>24</Text>
-      </View>
+      <View style={styles.cardsWrapper}>
+
+  <View style={styles.card}>
+    <Text style={styles.label}>Active Trips</Text>
+    <Text style={styles.value}>24</Text>
+  </View>
+
+  <View style={styles.card}>
+    <Text style={styles.label}>Online Drivers</Text>
+    <Text style={styles.value}>58</Text>
+  </View>
 
       <View style={styles.card}>
-        <Text style={styles.label}>Online Drivers</Text>
-        <Text style={styles.value}>58</Text>
-      </View>
+         <Text style={styles.label}>Today Revenue</Text>
+         <Text style={styles.value}>NGN 425,000</Text>
+        </View>
 
       <View style={styles.card}>
-        <Text style={styles.label}>Today Revenue</Text>
-        <Text style={styles.value}>NGN 425,000</Text>
+      <Text style={styles.label}>Pending Requests</Text>
+      <Text style={styles.value}>7</Text>
       </View>
 
-      <View style={styles.card}>
-        <Text style={styles.label}>Pending Requests</Text>
-        <Text style={styles.value}>7</Text>
       </View>
 
-      <View style={styles.mapBox}>
-        <Text style={styles.mapTitle}>Live Fleet Map</Text>
-        <Text style={styles.mapText}>● Driver 1 — Ikeja</Text>
-        <Text style={styles.mapText}>● Driver 2 — Lekki Phase 1</Text>
-        <Text style={styles.mapText}>● Driver 3 — Victoria Island</Text>
-        <Text style={styles.mapText}>● Driver 4 — Yaba</Text>
-      </View>
+      <Text style={styles.mapTitle}>Live Fleet Map</Text>
+
+      <View style={styles.driverRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.mapText}>Driver 1 — Ikeja</Text>
+        </View>
+
+        <View style={styles.driverRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.mapText}>Driver 2 — Lekki Phase 1</Text>
+        </View>
+
+        <View style={styles.driverRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.mapText}>Driver 3 — Victoria Island</Text>
+        </View>
+
+        <View style={styles.driverRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.mapText}>Driver 4 — Yaba</Text>
+        </View>
 
       <View style={styles.activityBox}>
         <Text style={styles.sectionTitle}>Recent Trip Activity</Text>
@@ -72,11 +90,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 24,
   },
+  cardsWrapper: {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  gap: 16,
+  marginBottom: 10,
+  },
   card: {
-    backgroundColor: '#111827',
-    padding: 18,
-    borderRadius: 16,
-    marginBottom: 12,
+  backgroundColor: '#111827',
+  padding: 22,
+  borderRadius: 20,
+  marginBottom: 12,
+  borderWidth: 1,
+  borderColor: '#1F2937',
+  width: 250,
   },
   label: {
     color: '#C9D1D9',
@@ -105,6 +132,19 @@ const styles = StyleSheet.create({
     color: '#C9D1D9',
     fontSize: 15,
     marginBottom: 6,
+    },
+    driverRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+
+  onlineDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 10,
+    backgroundColor: '#22C55E',
+    marginRight: 10,
   },
   activityBox: {
     backgroundColor: '#111827',
