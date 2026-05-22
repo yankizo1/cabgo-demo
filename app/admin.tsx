@@ -53,6 +53,34 @@ export default function AdminDashboard() {
           <Text style={styles.mapText}>Driver 4 — Yaba</Text>
         </View>
 
+        <View style={styles.statusBox}>
+  <Text style={styles.sectionTitle}>System Status</Text>
+
+        <View style={styles.statusRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.statusText}>GPS Tracking Active</Text>
+        </View>
+
+        <View style={styles.statusRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.statusText}>Payment Gateway Online</Text>
+        </View>
+
+        <View style={styles.statusRow}>
+          <View style={styles.onlineDot} />
+          <Text style={styles.statusText}>Driver Network Stable</Text>
+        </View>
+      </View>
+
+      <View style={styles.chartBox}>
+        <Text style={styles.sectionTitle}>Fleet Performance</Text>
+
+        <View style={styles.chartBarLarge} />
+        <View style={styles.chartBarMedium} />
+        <View style={styles.chartBarSmall} />
+        <View style={styles.chartBarLarge} />
+      </View>
+
       <View style={styles.activityBox}>
         <Text style={styles.sectionTitle}>Recent Trip Activity</Text>
         <Text style={styles.activity}>Ikeja City Mall → Lekki Phase 1 — NGN 5,500</Text>
@@ -146,6 +174,54 @@ const styles = StyleSheet.create({
     backgroundColor: '#22C55E',
     marginRight: 10,
   },
+  statusBox: {
+  backgroundColor: '#111827',
+  padding: 20,
+  borderRadius: 20,
+  marginBottom: 18,
+},
+
+statusRow: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginBottom: 12,
+},
+
+    statusText: {
+      color: '#C9D1D9',
+      fontSize: 15,
+    },
+
+    chartBox: {
+      backgroundColor: '#111827',
+      padding: 20,
+      borderRadius: 20,
+      marginBottom: 18,
+    },
+
+    chartBarLarge: {
+      height: 18,
+      width: '90%',
+      backgroundColor: '#F5C451',
+      borderRadius: 10,
+      marginBottom: 12,
+    },
+
+    chartBarMedium: {
+      height: 18,
+      width: '65%',
+      backgroundColor: '#F5C451',
+      borderRadius: 10,
+      marginBottom: 12,
+    },
+
+    chartBarSmall: {
+      height: 18,
+      width: '40%',
+      backgroundColor: '#F5C451',
+      borderRadius: 10,
+      marginBottom: 12,
+    },
   activityBox: {
     backgroundColor: '#111827',
     padding: 18,
